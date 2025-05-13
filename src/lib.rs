@@ -14,8 +14,8 @@
     clippy::too_many_arguments
 )]
 
-pub const BASE_PATH: &str = "/api/v3";
-pub const API_VERSION: &str = "1.0.12";
+pub const BASE_PATH: &str = "";
+pub const API_VERSION: &str = "1.0.0";
 
 #[cfg(feature = "server")]
 pub mod server;
