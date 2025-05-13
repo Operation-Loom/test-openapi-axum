@@ -1,0 +1,47 @@
+[package]
+name = "openapi"
+version = "1.0.12"
+authors = ["apiteam@swagger.io"]
+description = "This is a sample Pet Store Server based on the OpenAPI 3.0 specification.  You can find out more about Swagger at [https://swagger.io](https://swagger.io). In the third iteration of the pet store, we've switched to the design first approach! You can now help us improve the API whether it's by making changes to the definition itself or to the code. That way, with time, we can improve the API in general, and expose some of the new features in OAS3.  Some useful links: - [The Pet Store repository](https://github.com/swagger-api/swagger-petstore) - [The source API definition for the Pet Store](https://github.com/swagger-api/swagger-petstore/blob/master/src/main/resources/openapi.yaml)"
+license = "Apache 2.0"
+edition = "2021"
+
+[features]
+default = ["server"]
+server = []
+conversion = [
+    "frunk",
+    "frunk_derives",
+    "frunk_core",
+    "frunk-enum-core",
+    "frunk-enum-derive",
+]
+
+[dependencies]
+async-trait = "0.1"
+axum = { version = "0.8", features = ["multipart"] }
+axum-extra = { version = "0.10", features = ["cookie", "query"] }
+base64 = "0.22"
+bytes = "1"
+chrono = { version = "0.4", features = ["serde"] }
+frunk = { version = "0.4", optional = true }
+frunk-enum-core = { version = "0.3", optional = true }
+frunk-enum-derive = { version = "0.3", optional = true }
+frunk_core = { version = "0.4", optional = true }
+frunk_derives = { version = "0.4", optional = true }
+http = "1"
+lazy_static = "1"
+regex = "1"
+serde = { version = "1", features = ["derive"] }
+serde_html_form = "0.2"
+serde_json = { version = "1", features = ["raw_value"] }
+tokio = { version = "1", default-features = false, features = [
+    "signal",
+    "rt-multi-thread",
+] }
+tracing = { version = "0.1", features = ["attributes"] }
+uuid = { version = "1", features = ["serde"] }
+validator = { version = "0.20", features = ["derive"] }
+
+[dev-dependencies]
+tracing-subscriber = "0.3"
