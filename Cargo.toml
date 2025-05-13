@@ -1,8 +1,8 @@
 [package]
-name = "openapi"
+name = "test-openapi-axum"
 version = "1.0.0"
-authors = ["OpenAPI Generator team and contributors"]
-description = "A minimal OpenAPI spec with one GET endpoint."
+authors = ["Loom"]
+description = "A minimal OpenAPI spec with one GET endpoint. Rust-axum server stubs."
 edition = "2021"
 
 [features]
